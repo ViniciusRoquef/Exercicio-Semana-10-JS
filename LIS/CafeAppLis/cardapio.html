@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <!--  Tag meta de apresentação do código com o padrão da língua portuguesa -->
+  <meta charset="UTF-8">
+   <!-- Título do documento expresso na aba do navegador -->
+  <title>Cardápio</title>
+
+  <!--  link de importação do Bootstrap - CSS -->
+  <link href="node_modules/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+
+</head>
+
+<!-- Corpo do script -->
+<body>
+  <!-- Tag de Cabeçalho -->
+  <header>
+    <!-- O Nav vai indicar uma serie de links que podem ser utilizados para navegar para outras páginas -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+      <!-- A div vai ordenar os links, as listas e os botões em uma especie de "bloco" o qual pode ser estilizado de acordo com a demanda pela classe "container-fluid" -->
+      <div class="container-fluid">
+        <!-- Tag a criada para para adicionar um link de direcionamento nas palavras "Coffe e Arábica" -->
+        <a class="navbar-brand" href="#">
+          Coffee
+          <!-- Tag small quando utilizada deixa uma sting com com tamanho reduzido -->
+          <small>Arábica</small>
+        </a>
+        <!-- Botão com classe disponível para estilização, os atributos do bootstrap data Toggle e Target, indicam que o botão é do tipo colapsável tag e também ponta para o seletor apontando para uma tag HTML respectivamente.
+        O Aria fornece um vocabulário de padrões usado em qualquer elemento do do HTML a exemplo o Aria Label define uma string na tag do elemento atual-->
+        <button 
+        class="navbar-toggler" 
+        type="button" 
+        data-bs-toggle="collapse" 
+        data-bs-target="#navbarNav" 
+        aria-controls="navbarNav" 
+        aria-expanded="false" 
+        aria-label="Toggle navigation"
+        >
+        <!-- A tag span pode ser utilizada para agrupar elementos para fins de estilo (usando os atributos class ou id ), ou para compartilhar valores de atributos -->
+          <span class="navbar-toggler-icon"></span>
+        <!-- Fim da tag button -->
+        </button>
+         <!-- Div criada para alocar elemento de uma lista de itens com ID próprio -->
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <!-- Define uma lista desordenada de itens com classe para estilização própria -->
+          <ul class="navbar-nav">
+            <!-- Li é o elemento da lista -->
+            <li class="nav-item">
+              <!-- Tag a é o conteúdo do elemento da lista, citado aqui como um link de direcionamento para outra página HTML, neste caso estádirecionando para a página do arquivo index.html, o mesmo vale para o link Cardápio e Sobre. -->
+              <a class="nav-link" href="./index.html">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="#">Cardápio</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Sobre</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+  </header>
+  <!-- Elemento main define o elemento principal dentro do corpo da aplicação -->
+  <main>
+    <!-- Seção semântica dessa página Web -->
+    <section class="my-3">
+
+      <!-- Div que irá conter um pequeno formulário de criação de cardápio -->
+      <div class="container">
+
+        <!-- Botão simples de adicionar com características do bootstrap, por enquanto sem função específica do javascript-->
+        <button type="button" class="btn btn-secondary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+          +
+        </button>
+
+        <!-- Modal para conter o formulário -->
+        <div class="modal fade" data-bs-keyboard="false" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header">
+                <!-- Título h5 do modal com Id disponível para integração com JS -->
+                <h5 class="modal-title" id="exampleModalLabel">Adicionar Item</h5>
+                <!-- Botão de fechar -->
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+              </div>
+              <div class="modal-body">
+                <!-- Título do conteúdo do formulário -->
+                <h1>Conteúdo do modal</h1>
+
+                <!-- Inicio da tag de formulário -->
+                <form id="foodForm">
+                  <!-- Prieira Div, para o primeiro input tipo texto, nomeada pela label de "Nome" -->
+                  <div class="mb-3">
+                    <!-- Indicação do nome do input texto -->
+                    <label for="nome" class="form-label">Nome</label>
+                    <!-- Input tipo texto com id e classe especificado -->
+                    <input type="text" name="nome" id="nome" class="form-control">
+                    <!-- Div de descrição para o nome do alimento, aqui poderia ter colocado um placeholder no lugar. -->
+                    <div id="nomeHelp" class="form-text">Adicione o nome do Alimento.</div>
+                  </div>
+
+                  <!-- Segunda Div, para o segundo input tipo texto, nomeada pela label de "Descrição" -->
+                  <div class="mb-3">
+                    <!-- Indicação do nome do input texto -->
+                    <label for="descricao" class="form-label">Descrição</label>
+                    <!-- Input tipo texto com id e classe especificado -->
+                    <input type="text" name="descricao" id="descricao" class="form-control">
+                  </div>
+
+                   <!-- Terceira Div, para o terceiro input tipo texto, nomeada pela label de "Preço" -->
+                  <div class="mb-3">
+                    <!-- Indicação do nome do input texto -->
+                    <label for="preco" class="form-label">Preço</label>
+                    <!-- Input tipo texto com id e classe especificado -->
+                    <input type="text" name="preco" id="preco" class="form-control">
+                  </div>
+
+                  <!-- Quarta Div, para o quarta input tipo texto, nomeada pela label de "Imagem" -->
+                  <div class="mb-3">
+                    <!-- Indicação do nome do input texto -->
+                    <label for="imagem" class="form-label">Imagem</label>
+                    <!-- Input tipo texto com id e classe especificado -->
+                    <input type="text" name="imagem" id="imagem" class="form-control">
+                  </div>
+                  <!-- Div para alocação dos botões de "fechar e adicionar" -->
+                  <div class="modal-footer">
+                    <!-- Botão de fechar, sem nenhuma integração com Javascript -->
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
+
+                    <!-- Botão de Adicionar, sem nenhuma integração com Javascript -->
+                    <button type="submit" class="btn btn-primary" id="adicionarFoodButton">
+                      Adicionar
+                    </button>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Linha -->
+        <div id="itens-cardapio" class="row"></div>
+    <!-- Fim da tag section -->
+    </section>
+  <!-- Fim da tag main -->
+  </main>
+  <!-- Tag de rodapé da página, atualmente sem elementos -->
+  <footer></footer>
+  <!-- Importação do arquivo "./js/cardapio.js" -->
+  <script src="./js/cardapio.js" type="module"></script>
+
+  <!-- Tag para adicionar os elementos Javascript dentro do algorítmo -->
+  <script src="node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>
